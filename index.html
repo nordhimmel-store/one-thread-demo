@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ONE THREAD — Pulled from a single thread</title>
+<meta name="description" content="One embroidered dad hat, one original logo. Made to order by our partner.">
+<link rel="icon" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <a href="#thread" class="brand" aria-label="ONE THREAD home"><img src="logo.svg" alt="" width="28" height="28">ONE THREAD</a>
+  <nav aria-label="Steps">
+    <a href="#hat">Hat</a><a href="#on-you">On you</a><a href="#tie-off">Order</a>
+  </nav>
+</header>
+
+<main>
+<!-- 1 THE THREAD -->
+<section id="thread" class="scene s1">
+  <div class="title" aria-label="ONE THREAD">
+    <span class="word" id="w1">ONE</span>
+    <span class="word" id="w2">THREAD</span>
+  </div>
+  <p class="tag">Pulled from a single thread.</p>
+  <svg id="threadSvg" class="thread-svg" viewBox="0 0 200 400" aria-hidden="true">
+    <path id="threadPath" d="M100 0 C 100 60, 92 110, 100 160" fill="none" stroke="#D9442B" stroke-width="3" stroke-linecap="round"/>
+    <circle id="threadEnd" cx="100" cy="160" r="14" fill="transparent"/>
+    <circle id="threadKnot" cx="100" cy="160" r="4" fill="#D9442B"/>
+  </svg>
+  <p class="hint" id="pullHint">↓ pull the thread</p>
+  <div class="s1-actions">
+    <button class="btn ghost" id="startBtn">Start</button>
+    <a class="link" href="#tie-off" id="quickOrder">Just order the default hat — $39</a>
+  </div>
+</section>
+
+<div class="stitch-line" aria-hidden="true"></div>
+
+<!-- 2 THE HAT -->
+<section id="hat" class="scene s2">
+  <div class="hat-stage">
+    <canvas id="hatCanvas" aria-label="3D hat preview. Drag to rotate." role="img"></canvas>
+    <p class="drag-note">drag to turn it</p>
+  </div>
+  <div class="panel">
+    <h2>The hat</h2>
+    <p class="muted">Unstructured cotton twill dad hat. One logo, embroidered on the front.</p>
+    <fieldset>
+      <legend>Hat colour</legend>
+      <div class="swatches" id="hatSwatches"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Thread colour</legend>
+      <div class="dots" id="threadDots"></div>
+    </fieldset>
+    <p class="sel" id="selText"></p>
+    <div class="row">
+      <a class="btn" href="#on-you">See it on</a>
+      <a class="btn red" href="#tie-off">Order — $39</a>
+    </div>
+  </div>
+</section>
+
+<div class="stitch-line" aria-hidden="true"></div>
+
+<!-- 3 ON YOU -->
+<section id="on-you" class="scene s3">
+  <div class="head-wrap">
+    <svg id="headSvg" viewBox="0 0 300 340" role="img" aria-label="Illustration of the hat on a head">
+      <!-- shoulders -->
+      <path d="M40 340 C 50 270, 100 255, 150 255 C 200 255, 252 270, 262 340" fill="#1B1B1B"/>
+      <!-- neck -->
+      <path d="M128 215 L126 262 Q150 272 174 262 L172 215 Z" fill="#E8C9A8" stroke="#1B1B1B" stroke-width="2.5"/>
+      <!-- head -->
+      <path d="M92 140 C 88 200, 112 236, 150 238 C 190 236, 212 200, 208 140 C 206 100, 94 100, 92 140 Z" fill="#EFD3B4" stroke="#1B1B1B" stroke-width="2.5" stroke-linejoin="round"/>
+      <!-- ears -->
+      <path d="M93 150 q-14 -2 -12 16 q2 14 14 12" fill="#EFD3B4" stroke="#1B1B1B" stroke-width="2.5"/>
+      <path d="M207 150 q14 -2 12 16 q-2 14 -14 12" fill="#EFD3B4" stroke="#1B1B1B" stroke-width="2.5"/>
+      <!-- hair under hat -->
+      <path d="M95 132 q-4 18 2 30 q4 -14 10 -22 Z M205 132 q4 18 -2 30 q-4 -14 -10 -22 Z" fill="#3a2a20"/>
+      <!-- eyes -->
+      <g id="eyes" stroke="#1B1B1B" stroke-width="3" stroke-linecap="round" fill="none">
+        <path d="M124 170 q6 -5 12 0"/>
+        <path id="eyeR" d="M164 170 q6 -5 12 0"/>
+      </g>
+      <path d="M150 178 q-5 14 2 18" fill="none" stroke="#1B1B1B" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M136 210 q14 9 28 0" fill="none" stroke="#1B1B1B" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- hat -->
+      <g id="svgHat">
+        <path id="svgCrown" d="M86 136 C 84 70, 216 70, 214 136 Z" stroke="#1B1B1B" stroke-width="2.5" stroke-linejoin="round"/>
+        <path id="svgBrim" d="M80 134 C 110 128, 210 128, 250 146 C 236 158, 200 156, 150 152 C 120 150, 92 148, 80 140 Z" stroke="#1B1B1B" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M150 90 L150 134" stroke="rgba(0,0,0,.25)" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+        <circle cx="150" cy="88" r="4" id="svgButton" stroke="#1B1B1B" stroke-width="2"/>
+        <image id="svgLogo" href="" x="128" y="92" width="44" height="44"/>
+      </g>
+    </svg>
+  </div>
+  <div class="panel">
+    <h2>On you</h2>
+    <p><strong>Made to order by our partner.</strong> Ships in about a week.</p>
+    <p class="muted">Cotton twill · adjustable strap with brass buckle · one size.</p>
+    <a class="btn red" href="#tie-off">Tie it off — order</a>
+  </div>
+</section>
+
+<div class="stitch-line" aria-hidden="true"></div>
+
+<!-- 4 TIE OFF -->
+<section id="tie-off" class="scene s4">
+  <div class="card" id="checkoutCard">
+    <p class="demo-badge">Demo checkout — no payment is taken, nothing is ordered</p>
+    <h2>Tie off</h2>
+    <div class="summary">
+      <canvas id="miniLogo" width="80" height="80" aria-hidden="true"></canvas>
+      <div>
+        <p class="item">ONE THREAD dad hat</p>
+        <p class="muted" id="sumSel"></p>
+      </div>
+    </div>
+    <label class="field">Ship to
+      <select id="region">
+        <option value="eu">EU</option><option value="us">US</option><option value="uk">UK</option><option value="other">Rest of world</option>
+      </select>
+    </label>
+    <dl class="prices">
+      <dt>Hat</dt><dd>$39.00</dd>
+      <dt>Shipping (estimate)</dt><dd id="shipPrice">~$5.00</dd>
+      <dt class="total">Total</dt><dd class="total" id="total">~$44.00</dd>
+    </dl>
+    <p class="fine">Made to order by our partner. Final shipping is confirmed before payment.</p>
+    <button class="btn red big" id="orderBtn">Order — snip the thread</button>
+
+    <svg id="snipSvg" viewBox="0 0 400 80" aria-hidden="true">
+      <path id="snipL" d="M0 40 L200 40" stroke="#D9442B" stroke-width="3" stroke-linecap="round"/>
+      <path id="snipR" d="M200 40 L400 40" stroke="#D9442B" stroke-width="3" stroke-linecap="round"/>
+      <g id="scissors" transform="translate(-40 40)">
+        <g id="bladeA"><path d="M0 0 L34 -4 L34 2 Z" fill="#1B1B1B"/><circle cx="-8" cy="-8" r="7" fill="none" stroke="#1B1B1B" stroke-width="3"/></g>
+        <g id="bladeB"><path d="M0 0 L34 4 L34 -2 Z" fill="#1B1B1B"/><circle cx="-8" cy="8" r="7" fill="none" stroke="#1B1B1B" stroke-width="3"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="done" id="done" hidden>
+    <svg class="knot" viewBox="0 0 120 120" aria-hidden="true">
+      <path d="M20 70 C 40 70, 45 40, 62 42 C 82 44, 78 74, 60 74 C 44 74, 46 50, 64 52 C 80 54, 90 70, 104 66" fill="none" stroke="#D9442B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="knot-path"/>
+    </svg>
+    <p class="order-no" id="orderNo">ONE THREAD No. 0001</p>
+    <p class="tied">— tied off</p>
+    <p class="muted">This was a demo. No payment was taken and nothing was ordered.</p>
+    <button class="btn" id="backBtn">Back to the thread</button>
+  </div>
+</section>
+</main>
+
+<div class="buybar" id="buybar">
+  <span><strong>$39</strong> <span class="muted">+ ~$5 shipping</span></span>
+  <a class="btn red" href="#tie-off">Order</a>
+</div>
+
+<footer>
+  <p>ONE THREAD · Made to order by our partner · Original logo · <span class="muted">Demo store</span></p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
